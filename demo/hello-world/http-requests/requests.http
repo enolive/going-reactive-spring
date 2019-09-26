@@ -1,0 +1,14 @@
+GET http://localhost:8080/hello/Christoph
+
+###
+
+GET http://localhost:8080/hellos
+Content-Type: text/plain
+#Accept: application/stream+json
+#Accept: text/event-stream
+
+Christoph
+SoCraTes
+DATEV
+
+###

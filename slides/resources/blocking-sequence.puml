@@ -1,0 +1,24 @@
+@startuml
+actor User
+User -> Frontend : request
+note left : really slow :(\nUI is blocked
+activate User
+Frontend -> Backend : request
+activate Frontend
+activate Backend
+entity Service
+database DB
+Backend -> DB : read
+activate DB
+DB ---> Backend : response
+deactivate DB
+Backend -> Service : request
+activate Service
+Service --> Backend : response
+deactivate Service
+Backend --> Frontend : response
+deactivate Backend
+deactivate Frontend
+Frontend --> User : response
+deactivate User
+@enduml

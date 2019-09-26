@@ -1,0 +1,15 @@
+<div class="container">
+  <img src="../assets/scc-logo.svg" alt="DATEV Software Craft Community" class="scc-logo">
+  <h1 class="mt-3">Welcome to Hugs App!</h1>
+
+  <p class="text-info">
+    Here are some hugs that were given to you ❤️
+  </p>
+
+  <ul *ngIf="hugs.length > 0" class="list-group">
+    <li class="list-group-item" *ngFor="let hug of hugs">
+      {{hug.from}} was so nice to give you some 🤗<br>
+      at ⌚ {{hug.timeStamp | date: 'dd.MM.yyyy HH:mm' }}
+    </li>
+  </ul>
+</div>

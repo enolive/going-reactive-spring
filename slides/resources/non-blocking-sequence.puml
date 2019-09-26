@@ -1,0 +1,20 @@
+@startuml
+participant Caller
+participant Callee
+entity Promise
+
+Caller -> Callee : request
+activate Caller
+Callee -> Promise : defer
+Callee --> Caller : return promise
+note left : fast response
+deactivate Caller
+...
+Callee -> Promise : resolve
+activate Caller
+Promise --> Caller : then
+Caller -> Caller : process async
+note left : continue when\npromise is finished\nwithout blocking
+destroy Promise
+
+@enduml

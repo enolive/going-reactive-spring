@@ -1,0 +1,26 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.list-group-item {
+  font-size: 1.7em;
+}
+
+.list-group-item:nth-child(even) {
+  background-color: #94d54a;
+}
+
+.list-group-item:nth-child(odd) {
+  background-color: #6bb35c;
+}
+
+.scc-logo {
+  float: right;
+  height: 10em;
+}
+
+body {
+  background-color: black;
+}
+
+h1 {
+  color: #0ea893;
+}
