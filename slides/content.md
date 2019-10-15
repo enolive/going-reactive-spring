@@ -129,7 +129,7 @@ Flux.range(1, 100)
 
 ### lots of useful functions
 
-<--->
+<-->
 
 <section tagcloud large>
 filter 
@@ -214,6 +214,8 @@ public void register() {
 
 ## Compatibility with some modules
 
+<-->
+
 |Module         |Solution                       |
 |---------------|-------------------------------|
 |Spring Fox     |Migrate to Springdoc OpenAPI   |
@@ -226,7 +228,11 @@ public void register() {
 
 ## New programming paradigm
 
-👊 Learn <abbr title="Functional Reactive Programming">FRP</abbr>! 👊
+* Functional + Reactive Programming = FRP
+
+<-->
+
+👊 Learn FRP! 👊
 
 <--->
 
