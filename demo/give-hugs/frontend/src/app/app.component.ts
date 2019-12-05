@@ -26,10 +26,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.observeHugsStream()
-      .pipe(map(data => AppComponent.transformToDocument(data)))
-      .subscribe(hug => {
-        this.hugs = [hug, ...this.hugs.slice(0, this.MAX_ITEMS - 1)];
-      });
+        .pipe(map(data => AppComponent.transformToDocument(data)))
+        .subscribe(hug => {
+          this.hugs = [hug, ...this.hugs.slice(0, this.MAX_ITEMS - 1)];
+        });
   }
 
   private observeHugsStream(): Observable<string> {
@@ -37,7 +37,6 @@ export class AppComponent implements OnInit {
       const eventSource = new EventSource('http://localhost:8081/hugs/stream');
       eventSource.onmessage = message => {
         this.zone.run(() => observer.next(message.data));
-      };
-    });
+      };    });
   }
 }

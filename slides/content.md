@@ -31,7 +31,7 @@
 
 ![Throuput](resources/throughput-comparison.png)
 
-[Blog Post @ Medium](https://medium.com/@filia.aleks/microservice-performance-battle-spring-mvc-vs-webflux-80d39fd81bf0)
+https://medium.com/@filia.aleks/microservice-performance-battle-spring-mvc-vs-webflux-80d39fd81bf0
 <!-- .element: class="small" -->
 
 <-->
@@ -136,6 +136,7 @@ filter
 map 
 reduce 
 flatMap 
+switchIfEmpty
 onErrorResume
 doOnError
 doOnNext
@@ -148,6 +149,7 @@ zipWith
 log 
 repeat 
 retry
+retryBackoff
 window
 block
 collect
