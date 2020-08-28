@@ -6,4 +6,4 @@ mvn spring-boot:run &
 cd ..
 
 cd frontend
-ng serve -o
+npm start

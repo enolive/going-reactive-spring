@@ -150,6 +150,7 @@ log
 repeat 
 retry
 retryBackoff
+retryWhen
 window
 block
 collect
@@ -224,7 +225,7 @@ public void register() {
 |Spring HATEOAS |Support coming with 2.2        |
 |JDBC           |R2DBC coming with 2.3          |
 |Netflix Zuul   |Migrate to Spring Cloud Gateway|
-|Camunda        |tba                            |
+|Camunda        |Separate Dashboard + Engine    |
 
 <-->
 

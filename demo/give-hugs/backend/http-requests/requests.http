@@ -2,7 +2,7 @@ POST http://localhost:8081/hugs
 Content-Type: application/json
 
 {
-  "from": "Chris"
+  "from": "Lazer"
 }
 
 ###

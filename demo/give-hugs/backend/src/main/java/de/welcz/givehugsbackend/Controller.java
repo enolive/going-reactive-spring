@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
 import java.time.LocalDateTime;
 
 @RestController
-@CrossOrigin
+@CrossOrigin()
 public class Controller {
   private final HugsRepository repository;
 

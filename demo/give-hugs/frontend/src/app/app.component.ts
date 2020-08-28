@@ -37,6 +37,7 @@ export class AppComponent implements OnInit {
       const eventSource = new EventSource('http://localhost:8081/hugs/stream');
       eventSource.onmessage = message => {
         this.zone.run(() => observer.next(message.data));
-      };    });
+      };
+    });
   }
 }
