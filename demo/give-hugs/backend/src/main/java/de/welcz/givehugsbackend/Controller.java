@@ -27,8 +27,8 @@ public class Controller {
                  content = @Content(schema = @Schema(implementation = InsertHugDto.class))
              ))
   @PostMapping(value = "/hugs",
-               consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
-               produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+               consumes = MediaType.APPLICATION_JSON_VALUE,
+               produces = MediaType.APPLICATION_JSON_VALUE)
   public Mono<HugDocument> insertNewHug(@RequestBody Mono<InsertHugDto> hug) {
     return hug.map(this::transformToDocument)
               .flatMap(repository::save);
@@ -36,7 +36,7 @@ public class Controller {
 
   @Operation(summary = "gets a list of currently available hugs")
   @GetMapping(value = "/hugs", produces = {
-      MediaType.APPLICATION_JSON_UTF8_VALUE,
+      MediaType.APPLICATION_JSON_VALUE,
       MediaType.APPLICATION_STREAM_JSON_VALUE,
       MediaType.TEXT_EVENT_STREAM_VALUE
   })
