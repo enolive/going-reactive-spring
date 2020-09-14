@@ -209,6 +209,29 @@ public void register() {
 }
 ```
 
+<-->
+
+```java
+public Mono<Void> putMetadata(String uuid, Metadata metadata) {
+    return builder.baseUrl(...)
+                  .build()
+                  .put()
+                  .uri("/documents/{uuid}/metadata", uuid)
+                  .bodyValue(metadata)
+                  .exchange()
+                  .map(ClientResponse::statusCode)
+                  .flatMap(this::checkPutMetadataResponse)
+                  .retryWhen(
+                    Retry.fixedDelay(5, MIN_BACKOFF)
+                         .filter(it -> it instanceof RetryOnConflictException)
+                  )
+                  .onErrorMap(Exceptions::isRetryExhausted, 
+                              this::responseStatusConflict)
+                  .log()
+                  .then();
+  }
+```
+
 <--->
 
 # Drawbacks
@@ -219,13 +242,14 @@ public void register() {
 
 <-->
 
-|Module         |Solution                       |
-|---------------|-------------------------------|
-|Spring Fox     |Migrate to Springdoc OpenAPI   |
-|Spring HATEOAS |Support coming with 2.2        |
-|JDBC           |R2DBC coming with 2.3          |
-|Netflix Zuul   |Migrate to Spring Cloud Gateway|
-|Camunda        |Separate Dashboard + Engine    |
+|Module           |Solution                       |
+|-----------------|-------------------------------|
+|Spring Fox       |Migrate to Springdoc OpenAPI   |
+|Spring HATEOAS   |Support coming with 2.2        |
+|JDBC             |R2DBC coming with 2.3          |
+|Netflix Zuul     |Migrate to Spring Cloud Gateway|
+|Camunda          |Separate Dashboard + Engine    |
+|Spring Data Rest |tba 😢                         |
 
 <-->
 
