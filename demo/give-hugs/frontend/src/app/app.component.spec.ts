@@ -1,5 +1,5 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import {TestBed, waitForAsync} from '@angular/core/testing';
+import {AppComponent} from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
@@ -7,6 +7,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      teardown: {destroyAfterEach: false}
     }).compileComponents();
   }));
 
