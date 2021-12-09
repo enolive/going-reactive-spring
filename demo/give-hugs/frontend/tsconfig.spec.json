@@ -6,8 +6,7 @@
       "jasmine",
       "node"
     ],
-    "esModuleInterop": true,
-    "emitDecoratorMetadata": true
+    "esModuleInterop": true
   },
   "files": [
     "src/setup-jest.ts",
